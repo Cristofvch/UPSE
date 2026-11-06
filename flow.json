@@ -159,7 +159,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "6",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -204,7 +204,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "3",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -249,7 +249,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "4",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
