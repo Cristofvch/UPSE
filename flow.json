@@ -1,0 +1,452 @@
+[
+    {
+        "id": "tab_cliente",
+        "type": "tab",
+        "label": "Cliente",
+        "disabled": false,
+        "info": "Cliente Dashboard y Peticiones API"
+    },
+    {
+        "id": "tab_servidor",
+        "type": "tab",
+        "label": "Servidor",
+        "disabled": false,
+        "info": "Servidor REST API"
+    },
+    {
+        "id": "93dca8e9f37e8e36",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ui_tab_cliente",
+        "type": "ui_tab",
+        "name": "API Client UI",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group_cliente",
+        "type": "ui_group",
+        "name": "Panel de Control REST",
+        "tab": "ui_tab_cliente",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "cedc7fa04ef1d083",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "button_temp",
+        "type": "ui_button",
+        "z": "tab_cliente",
+        "name": "Btn Temp",
+        "group": "ui_group_cliente",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Consultar Temperatura",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "http_req_temp"
+            ]
+        ]
+    },
+    {
+        "id": "http_req_temp",
+        "type": "http request",
+        "z": "tab_cliente",
+        "name": "Req Temp",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1880/API/6toB/Cristopher/temperatura",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "4ee2ab8881539fa1"
+            ]
+        ]
+    },
+    {
+        "id": "debug1",
+        "type": "debug",
+        "z": "tab_cliente",
+        "name": "debug1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 820,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "button_ubicacion",
+        "type": "ui_button",
+        "z": "tab_cliente",
+        "name": "Btn Ubicacion",
+        "group": "ui_group_cliente",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Consultar Ciudad y País",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "http_req_ubicacion"
+            ]
+        ]
+    },
+    {
+        "id": "http_req_ubicacion",
+        "type": "http request",
+        "z": "tab_cliente",
+        "name": "Req Ubicacion",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1880/API/6toB/Cristopher/ubicacion",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "a079512f661faabd"
+            ]
+        ]
+    },
+    {
+        "id": "debug2",
+        "type": "debug",
+        "z": "tab_cliente",
+        "name": "debug2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 820,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4ee2ab8881539fa1",
+        "type": "function",
+        "z": "tab_cliente",
+        "name": "function 1",
+        "func": "msg.payload = \"Temperatura: \" + msg.payload.temperatura + \" \" + msg.payload.unidad;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 100,
+        "wires": [
+            [
+                "debug1",
+                "066f6f259a3eb7f0"
+            ]
+        ]
+    },
+    {
+        "id": "a079512f661faabd",
+        "type": "function",
+        "z": "tab_cliente",
+        "name": "function 2",
+        "func": "msg.payload = \"Ciudad: \" + msg.payload.ciudad + \" | País: \" + msg.payload.pais;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "debug2",
+                "bf64e4599b8f9e34"
+            ]
+        ]
+    },
+    {
+        "id": "066f6f259a3eb7f0",
+        "type": "ui_text",
+        "z": "tab_cliente",
+        "group": "ui_group_cliente",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temp:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "bf64e4599b8f9e34",
+        "type": "ui_text",
+        "z": "tab_cliente",
+        "group": "ui_group_cliente",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ubicacion:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 850,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "http_in_temp",
+        "type": "http in",
+        "z": "tab_servidor",
+        "name": "GET Temperatura",
+        "url": "/API/6toB/Cristopher/temperatura",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "func_temp"
+            ]
+        ]
+    },
+    {
+        "id": "func_temp",
+        "type": "function",
+        "z": "tab_servidor",
+        "name": "Generar Temperatura",
+        "func": "let temp = (Math.random() * (35.0 - 18.0) + 18.0).toFixed(1);\nmsg.payload = { temperatura: Number(temp), unidad: \"°C\" };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "http_res_temp"
+            ]
+        ]
+    },
+    {
+        "id": "http_res_temp",
+        "type": "http response",
+        "z": "tab_servidor",
+        "name": "Respuesta Temp",
+        "statusCode": "",
+        "headers": {},
+        "x": 680,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "http_in_ubicacion",
+        "type": "http in",
+        "z": "tab_servidor",
+        "name": "GET Ubicación",
+        "url": "/API/6toB/Cristopher/ubicacion",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "func_ubicacion"
+            ]
+        ]
+    },
+    {
+        "id": "func_ubicacion",
+        "type": "function",
+        "z": "tab_servidor",
+        "name": "Generar Ciudad y País",
+        "func": "msg.payload = {\n    ciudad: \"Machala\",\n    pais: \"Ecuador\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [
+                "http_res_ubicacion"
+            ]
+        ]
+    },
+    {
+        "id": "http_res_ubicacion",
+        "type": "http response",
+        "z": "tab_servidor",
+        "name": "Respuesta Ubicación",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 200,
+        "wires": []
+    }
+]
